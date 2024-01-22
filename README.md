@@ -1,12 +1,7 @@
-while true do
-    task.wait()
-    pcall(function()
-        local xylo = game.Workspace:GetDescendants()
-
-        for _, hub in pairs(xylo) do
-            if hub:IsA("Model") and hub:FindFirstChild("Humanoid") then
-                hub.Humanoid.Health = -math.huge
-            end
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(A, B, C)
+    if A == Enum.TeleportState.InProgress then
+        if game:IsLoaded() then
+        print("Test")
         end
-    end)
-end
+    end
+end)
