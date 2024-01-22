@@ -1,9 +1,11 @@
 while true do
     task.wait()
     pcall(function()
-        for _, v in pairs(game.Workspace:GetDescendants()) do
-            if v:IsA("Humanoid") then
-                v.Health = -math.huge
+        local xylo = game.Workspace:GetDescendants()
+
+        for _, hub in pairs(xylo) do
+            if hub:IsA("Model") and hub:FindFirstChild("Humanoid") then
+                hub.Humanoid.Health = -math.huge
             end
         end
     end)
